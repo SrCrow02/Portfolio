@@ -4,6 +4,9 @@ import blogImage from '../assets/blog.jpeg';
 import galeryImage from '../assets/galery.png';
 import { FaHtml5, FaGithub, FaReact, FaNodeJs, FaCss3Alt, FaJsSquare, FaDiscord,  FaSass } from 'react-icons/fa'; // Importando ícones das tecnologias
 import { SiPrisma, SiTypescript, SiPostgresql, SiHandlebarsdotjs } from 'react-icons/si';
+
+import TiltImage from './TiltImage';
+import ContactForm from './ContactForm';
 const Main = () => {
   return (
     <section className="flex flex-col">
@@ -36,8 +39,11 @@ const Main = () => {
         {/* Blog Project */}
         <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-600 flex flex-col md:flex-row-reverse items-center">
         <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
-            <img src={blogImage} alt="Blog Project" className="w-full max-w-xl h-auto object-cover rounded-lg" />
-        </div>
+        <TiltImage
+          imageUrl={blogImage}
+          className="w-full max-w-4xl h-auto object-cover rounded-lg shadow-lg"
+          />
+      </div>
         <div className="w-full md:w-1/2 text-center md:text-left px-6">
             <h3 className="text-2xl font-semibold mb-2">Blog</h3>
             <p className="mb-4">I did this project just for fun, it actually works, but is not amazing</p>
@@ -64,8 +70,11 @@ const Main = () => {
         {/* Gallery Project */}
         <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-600 flex flex-col md:flex-row-reverse items-center">
         <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
-            <img src={galeryImage} alt="Galery" className="w-full max-w-xl h-auto object-cover rounded-lg shadow-lg border-4 border-blue-600" />
-        </div>
+        <TiltImage
+          imageUrl={galeryImage}
+          className="w-full max-w-4xl h-auto object-cover rounded-lg shadow-lg"
+          />
+      </div>
         <div className="w-full md:w-1/2 text-center md:text-left px-6">
             <h3 className="text-2xl font-semibold mb-2">Galery</h3>
             <p className="mb-4">Just a frontend mini-project that I used to study a little bit.</p>
@@ -85,37 +94,7 @@ const Main = () => {
   <h2 className="text-4xl font-bold mb-4 text-red-400">Contact</h2>
   <p className="text-lg mb-6">Let's work together on your next big project. Whether you have a question or want to get started, I'd love to hear from you!</p>
   
-    {/* Contact Form */}
-    <form className="w-full max-w-lg">
-      <div className="flex flex-col mb-4">
-        <label className="mb-2 text-sm font-semibold text-left" htmlFor="name">Name</label>
-        <input
-          className="bg-gray-800 text-white rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-          type="text"
-          id="name"
-          placeholder="Your Name"
-        />
-      </div>
-      <div className="flex flex-col mb-4">
-        <label className="mb-2 text-sm font-semibold text-left" htmlFor="email">Email</label>
-        <input
-          className="bg-gray-800 text-white rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-          type="email"
-          id="email"
-          placeholder="Your Email"
-        />
-      </div>
-      <div className="flex flex-col mb-4">
-        <label className="mb-2 text-sm font-semibold text-left" htmlFor="message">Message</label>
-        <textarea
-          className="bg-gray-800 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-          id="message"
-          placeholder="Write your message here..."
-          rows="4"
-        ></textarea>
-      </div>
-      <button className="bg-red-500 text-white px-6 py-4 rounded-full hover:bg-red-600 transition duration-300 w-full">Send Message</button>
-    </form>
+    <ContactForm/>
 
     {/* Additional Contact Info */}
     <div className="mt-8">
@@ -129,11 +108,11 @@ const Main = () => {
       <footer className="bg-gray-900 text-white py-8 text-center">
         <div className="flex justify-center space-x-4 mb-4">
           <a href="#" className="text-white hover:text-gray-400"><i className="fab fa-2x"><FaGithub></FaGithub></i></a>
-          <a href="#" className="text-white hover:text-gray-400"><i className="fab fa-linkedin fa-2x"><FaDiscord></FaDiscord></i></a>
+          <a href="#" className="text-white hover:text-gray-400"><i className="fab fa-2x"><FaDiscord></FaDiscord></i></a>
         </div>
         <p>&copy; 2024 Guilherme. All rights reserved.</p>
       </footer>
-    </section>
+    </section>    
   );
 }
 
